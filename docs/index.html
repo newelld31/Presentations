@@ -1,40 +1,2676 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>reveal.js</title>
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/layout.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script defer src="dist/fontawesome/all.min.js"></script>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Proposed Axo2.jpg" alt="" style="object-fit: scale-down">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# REPAIR IN A BROKEN WORLD
+<div class="" style="position: absolute; left: 0%; top: 160%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+## DESIGN, CONSTRUCT, DISCARD? <!-- .element: style="color: #eded70" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 0%; top: 450%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+SOIL, WORMS, GARDENS & THE SUBURBS: A DEGROWTH PERSPECTIVE
+<!-- .element: style="font-size: 35px" -->
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**The Univesity of Melbourne // Melbourne Shool of Design**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/20110114-Ceres-CalEarth-171604.png" alt="" style="object-fit: scale-down">
+
+<div class="has-light-background" style="background-color: white; padding: 50px; box-sizing: border-box; opacity: 0.3; position: absolute; left: 8%; top: 27%; height: 22%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SITUATING MYSELF
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- PhD candidate at the University of Melbourne.
+- My creative practice research is uses a framework of **Degrowth** to examine the potential for **transformative adaption** of local built environments through **care**, **repair**, **re-use**, and **maintenance**.
+- I am a longtime fanboy of soil and soil life.
+
+
+
+
+Notes:
+PhD candidate
+Haven't talked about soil much in this presentation
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: Joanne Nataprawira // **Super Adobe workshop with Cal Earth at CERES** // 2011
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/20110115-Ceres-CalEarth-115351.png" alt="" style="object-fit: scale-down">
+
+<div class="has-light-background" style="background-color: white; padding: 50px; box-sizing: border-box; opacity: 0.3; position: absolute; left: 8%; top: 27%; height: 37%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SUPER ADOBE
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- Earthbag domes were developed by **Nader Khalili**, an Iranian-born architect who immigrated to the USA *(Sinclair & Stohr 2011)*.
+- Kahili partnered with **United Nations** Development Program and the United Nations High Commissioner for **Refugees** to move Superadobe from theoretical to practical *(Sinclair & Stohr 2011)*.
+- It **reuses** the materials of war.
+- Low financial capital.
+- High labour capital.
+
+
+
+
+Notes:
+During the humanitarian crisis of the Persian Gulf War Kahili partnered with United Nations Development Programme and the United Nations High Commissioner for Refugees to move Superadobe from theoretical to practical.
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: Joanne Nataprawira // **Super Adobe workshop with Cal Earth at CERES** // 2011
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOILS, WORMS, GARDENS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SOIL, WORMS, GARDENS & THE SUBURBS:
+<div class="" style="position: absolute; left: 0%; top: 160%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+## A DEGROWTH PERSPECTIVE <!-- .element: style="color: #eded70" -->
+
+</div>
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- What is degrwoth?
+- How is degrowth related to care and repair?
+- How is it related to soil?
+- Why do the suburbs matter?
+- What should we do?
+
+
+
+
+
+Notes:
+PhD candidate
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: Joanne Nataprawira // **Super Adobe workshop with Cal Earth at CERES** // 2011
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# DEGROWTH 
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- **Nicholas Georgescu-Roegen**’s 1972 essay Tomorrow Degrowth: Entropy – Ecology – Economy and;
+- The 1972 ‘**Limits to Growth**’ report for the Club of Rome *(D’Alisa et al., 2014; Hickel, 2020; Liegey & Nelson, 2020; Schmelzer et al., 2022)*.
+- Degrowth was emerged from the basic principles of entropy, energy laws, economics, and the limits to growth.
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS/ 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+#  LIMITS TO GROWTH
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+<img src="Files/Limits to Growth graph.png" alt="" style="width: 1400px; object-fit: fill">
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Adapted from / **Limits To Growth: The 30 Year Update** / *(D. Meadows et al.)* 
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS/ 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+#  LIMITS TO GROWTH
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- We are reaching the **biophysical limits** of earth *(Schramski et al., 2015*). 
+- The most imminent threat is **climate change** *(P.R., Shukla et al., 2022)*. 
+- **Nowhere in the world will be safe**, and we face a humanitarian crisis as people are pushed from their homelands *(King & Jones, 2021)*. 
+- **GHG emissions** must be **reduced** to avoid a **hothouse earth** *(Steffen et al., 2018)*.
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Graham Turner (2014) Page 16** // Is global collapse imminent? An updated comparison of the Limits to Growth with historical data. MSSI Research Paper, 4. 21.
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS/ 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+#  LIMITS TO GROWTH
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+ 
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+Preparing for a collapsing global system could be even more important than trying to avoid collapse.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Graham Turner (2014) Page 16** // Is global collapse imminent? An updated comparison of the Limits to Growth with historical data. MSSI Research Paper, 4. 21.
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS/ 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+#  DEGROWTH
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+- **Degrowth** has worked toward an **ethico-political theory** that tackles the **limits to growth** in a way that is **realistic**, **equitable**, and **socially just** *(D’Alisa et al., 2014; Hickel, 2020; Liegey & Nelson, 2020; Schmelzer et al., 2022)*.
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS/ 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# DEFINING DEGROWTH
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+Degrowth signifies, first and foremost, a critique of growth. It calls for the decolonisation of public debate from the idiom of economism and for the abolishment of economic growth as a social objective. Beyond that, degrowth signifies also a desired direction, one in which societies will use fewer natural resources and will organise and live differently than today. ‘Sharing’, ‘simplicity’, ‘conviviality’, ‘care’ and the ‘commons’ are primary significations of what this society might look like.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+D'Alisa, G., Demaria, F., & Kallis, G. (2014). **Degrowth: A Vocabulary for a New Era**. Taylor & Francis Group. Page. 13
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# DEFINING DEGROWTH
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+A planned downscaling of energy and resource use to bring the economy back into balance with the living world in a safe, just, and equitable way.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Jason Hickel (2020) Page. 41** // Less is More: How Degrowth Will Save the World (1st edition). William Heinmann. 
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# DEFINING DEGROWTH
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+Reducing working hours is a goal in and of itself, since it liberates time. But it can also ensure a balanced distribution of employment in which the economy stops growing even as productivity continues to rise. In a capitalist society, the product of an economy – conventionally measured in GDP – roughly corresponds to the number of hours worked multiplied by labour productivity...From a degrowth perspective, however, the extent of possible reductions in working hours has its limits, as labour productivity is very likely to increase more slowly, or even decline, due to the importance of care activities and the elimination of ‘energy slaves’ from fossil fuels.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Schmelzer, M., Vansintjan, A., & Andrea  Vetter. (2022) Page 189-190** // The Future is Degrowth: A Guide to a World Beyond Capitalism. Verso.
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# DEFINING DEGROWTH
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- Within a degrowth framework **social justice** and **knowledge accumulation** can continue while staying within the **environmental**, **social**, and **material boundaries** of earth *(Schmelzer et al., 2022)*.
+- Degrowth would entail a **contraction in GDP in developed economies** and is distinctly **anti-capitalist** *(Schmelzer et al., 2022)*.
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# GROWTH & REAL ESTATE
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **Real estate** is the primary vehicle for **moving capital** and **fixing** it in **space** *(Harvey, 2001)*.
+- **Fiat**, which is symbolic capital **drawn down from the future**, is locked into **physical assets**, primarily through real estate *(Durand, 2017)*.
+- Speculation generates wealth *(Durand, 2017)*.
+- Capitalism’s need for **material commodification** and **growth** means there is always a **housing crisis** and demand for **new built capital** *(Aalbers, 2016; Marcuse & Madden, 2016)*.
+- None of this is good news for soil, worms, and gardens!
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# GROWTH & REAL ESTATE
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+<img src="Files/Global real estate.png" alt="" style="width: 1000px; object-fit: fill">
+
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Adapted from / **Savills: Around the world in dollars and cents** / *(Barnes, 2016)*
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SPATIAL FIX
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+Capital is always in motion and much of that motion is spatial: commodity exchange... always entails change of location and spatial movement. The market is spatialised... and how that spatiality works has consequences for uneven geographical development.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**David Harvey** (2001) Page 29.// *Globalization and the “Spatial Fix”. Geographische Revue : Zeitschrift Für Literatur Und Diskussion, 3(2), 23–30.*
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SPATIAL FIX 
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **The spacial fix** is a type of **primitive accumulation** that stabilise capitalism's internal contradictions *(Harvey, 1981, 2018; Marx, 2018)*.
+- The spatial fix literally fixes **under consumption** and **overproduction** *(Harvey, 2001)*.
+
+
+
+
+
+
+Notes:
+not good for soil
+
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+**USA**
+<!-- .element: style="font-size: 30px; position: absolute; left: 0%; top: 60%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+cement production
+<!-- .element: style="font-size: 30px; position: absolute; left: 0%; top: 63%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+1901-2000 (100 years)
+<!-- .element: style="font-size: 30px; position: absolute; left: 0%; top: 66%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+4.5 gigatons
+<!-- .element: style="font-size: 30px; position: absolute; left: 0%; top: 69%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+
+**CHINA**
+<!-- .element: style="font-size: 30px; position: absolute; left: 36%; top: 60%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+cement production
+<!-- .element: style="font-size: 30px; position: absolute; left: 36%; top: 63%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+2011-2013 (3 years)
+<!-- .element: style="font-size: 30px; position: absolute; left: 36%; top: 66%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+6.6 gigatons
+<!-- .element: style="font-size: 30px; position: absolute; left: 36%; top: 69%; height: 0%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center" --> 
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SPATIAL FIX 
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+<img src="Publish/Repair in a broken world Seminar/China Concrete Use - Drawing.png" alt="" style="object-fit: scale-down">
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Adapted from / https://www.gatesnotes.com/Making-the-Modern-World
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# INTERMISSION
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+<img src="Files/cumulative co2.png" alt="" style="width: 1300px; object-fit: fill">
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Fanning, A. L., & Hickel, J. (2023). Compensation for atmospheric appropriation. Nature Sustainability, 1–10. https://doi.org/10.1038/s41893-023-01130-8
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# LOOSING SOIL
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **Urbanisation** is one of the most **intensively detrimental** human activities on the planet *(P.R., Shukla et al., 2022 see ch. 8)*.
+- **Buildings** contributed **21%** of **GHG** in 2019 *(P.R., Shukla et al., 2022)*.
+- The need for **growth** and the outlay of **capital investment** into **productive infrastructure** means **capacity must be used**.
+- This leads to **exponential growth** of the built environment.
+- **Soil is moved, dug, contaminated, and covered over.**
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# INDUSTRIAL FARMING
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **Food systems** contribute **19%–29%** of global **GHG** emissions *(Vermeulen et al., 2012)*.
+- **Nitrogen fertiliser** produced via the **Haber-Bosch** process, which forces nitrogen in the air to combine with the hydrogen in natural gas, **feeds** at least **4 billion people** *(Friedemann, 2021)*.
+- **Soil erodes 10–1000** times faster in **modified landscapes** than in **untouched nature** *(Friedemann, 2021)*.
+- **Soil erodes 90% faster** than it can be formed on **ploughed land** *(Friedemann, 2021)*.
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/EPSG3857_Date20230111_Lat-37.913353_Lon144.693279_Mpp1.194.jpg" alt="" style="width: 2500px; object-fit: fill">
+
+<div class="has-light-background" style="background-color: white; padding: 50px; box-sizing: border-box; opacity: 0.5; position: absolute; left: 8%; top: 27%; height: 42%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SUBURBS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- Social critic James Kunstler once described suburbia as **‘the greatest misallocation of resources in the history of the world’** *(Kunstler, 2004)*.
+- Sammuel Alexander and Brendan Gleeson, writing in 'Degrowth in the Suburbs' argue that there is '**latent potential to radically reimagine how we live with the existing'** *(Samuel Alexander & Brendan Gleeson, 2019)*.
+- This isn't a defence of suburbia, but a call for **speculative care**.
+- **Densification isn't always the answer**.
+-  Degrowth Scholar Anitra Nelson argues that above all else, **reducing per capita floor space of housing**, while increasing community sustainability is fundamental to lowering GHG's (Nelson, 2018).
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Source // Near Map // **Werribee river food bowl, Australia's most fertile soils, and a fast encroaching suburbia.**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SPECULATIVE CARE
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+The work of care can be done within and for worlds that we might find objectionable. For what is care given? These interrogative oscillations expose how… the tensions between care as maintenance doings and work, affective engagement, and ethico-political involvement—opens a terrain for exploring, in situation, the subtle thought of care… it points to how the “ethics” in an ethics of care cannot be about a realm of normative moral obligations but rather about thick, impure, involvement in a world where the question of how to care needs to be posed. That is, it makes of ethics a hands-on, ongoing process of re-creation of “as well as possible” relations and therefore one that requires a speculative opening about what a possible involves.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Maria Puig De La Bellacasa (2017) Page 6** // Matters of Care: Speculative Ethics in More than Human Worlds. University of Minnesota Press.
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SUBURBS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+<img src="Files/EPSG3857_Date20100220_Lat-37.749858_Lon144.908094_Mpp0.075.jpg" alt="" style="object-fit: scale-down">
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Source / **Near Map** 
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SUBURBS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+<img src="Files/EPSG3857_Date20230424_Lat-37.749858_Lon144.908094_Mpp0.075.jpg" alt="" style="object-fit: scale-down">
+
+
+
+
+
+Notes:
+speculation but no care!
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Source / **Near Map**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# THE SUBURBS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+<img src="Publish/Repair in a broken world Seminar/Housing Latent Potential.png" alt="" style="width: 1000px; object-fit: fill">
+
+
+
+
+
+Notes:
+During WWII, the USA established the War Food Administration (WFA) to educate citizens on growing food. This program reinstated the ‘Victory Garden’ scheme started during WWI. It’s estimated that by 1942 there were 20 million victory gardens producing 10 billion pounds of food, accounting for 40% of fresh produce2.
+
+In Britain, the Food (Defence Plans) Department was created in 1936. During WWII horticultural committees were set up to teach food growing. By 1942 it’s estimated that 10% of Britain's food was produced in allotment gardens. This portion was the nutritional dense food supplementing the high calorie staples from agriculture, keeping the nation healthy.
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Adapted from / **Near Map** 
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SPREADING OUT
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+“
+<!-- .element: style="font-size: 180px; color: #505050" font-style:"oblique"="true" --> 
+
+Moving to a mature post-carbon human energetic ecosystem would probably involve junking billions of dollars of fossil fuel investment and infrastructure, which would take a lot of movement out of the global economy of both a fiscal and physical kind. It would generate multitudes of people looking for new kinds of localised, low carbon work. One of the most obvious and necessary forms of such work in a low-energy throughput economy is farming, which can absorb a lot of labour. A human energetic ecosystem of this kind would probably look a lot like the diffuse, rural world of premodern agriculture, oriented to skimming energetic flows rather than mining energetic stocks.
+
+<!-- .element: style="font-size: 30px; position: absolute; left: 6%; top: 88%; height: 0%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: top" align="justify" --> 
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Chris Smaje (2020) Page 40** // *A Small Farm Future. Chelsea Green Publishing Co.*
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Proposed Axo2.jpg" alt="" style="object-fit: scale-down">
+
+<div class="has-dark-background" style="background-color: #7f8256; padding: 50px; box-sizing: border-box; opacity: 0.5; position: absolute; left: 8%; top: 27%; height: 39%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# SPREADING OUT
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- **Solar energy** is abundant but **diffuse**.
+- It **flows** through **stocks** and **degrades** with use.
+- **Life** tends to **spread out** to take **advantage** of **energy flows**, collecting at concentration points.
+- **Cities** are like **feedlots** that are concentration points of energy stocks.
+- In **post growth** situations, **energy** becomes more **diffuse**.
+- And **life** begins to **spread away** from **cities** *(Tainter, 1990)*.
+- The spread of **suburbia** creates **latent potential** to **collect** diffuse **energy flows**.
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Illustration // Dylan Newell // 2021
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Detroit Farm.jpg" alt="" style="object-fit: scale-down">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+## DETROIT
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: **Adam Schultz** // https://www.flickr.com/photos/bidenforpresident/50517547297/ // 2019
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Cuba Farm.jpg" alt="" style="object-fit: scale-down">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+## CUBA
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: **Ben Kucinski**// https://www.flickr.com/photos/kucinski/10548647063 // 2013
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# POST GROWTH
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- A **recession** and **degrowth** are **not the same**.
+- Degrowth is planned.
+- **Lebanon** offers current insight into **unplanned post growth**, with GDP dropping by almost half from 2019 levels *(World Bank, 2020)*.
+- In Lebanon, **food is the priority** *(Joslin Faith Kehdy, 2023)*.
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Source // **Chris Smaje (2020) Page 40** // *A Small Farm Future. Chelsea Green Publishing Co.*
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/20120704-224832.jpg" alt="" style="object-fit: scale-down">
+
+<div class="has-dark-background" style="background-color: #7f8256; padding: 50px; box-sizing: border-box; opacity: 0.5; position: absolute; left: 8%; top: 27%; height: 42%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# REPAIRING SOIL
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **Pedogenesis** takes **100s** to **1000s** of **years**.
+- It has five factors: **parent material,** **weathering**, **climate**, **topography**, and **organisms**.
+- **Repairing soil** to some extent is possible at **small scales** and at a **high labour** cost.
+- **Biological diversity** is key, which is inefficient at industrial scales.
+- The **latent potential** of the **suburbs** is its **soil**.
+- In a **degrowth future** without '**bullshit jobs**' *(Graeber, 2018)*, and with **shorter working hours**, **care** work will be a **priority** *(Schmelzer et al., 2022)*.
+- **Care** and **repair** for **soil** will be vital.
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Photo: Dylan Newell // View across the diverse ecologies of CERES // 2021**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Food Forest.jpg" alt="" style="object-fit: scale-down">
+
+<div class="has-dark-background" style="background-color: #7f8256; padding: 50px; box-sizing: border-box; opacity: 0.5; position: absolute; left: 8%; top: 27%; height: 35%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+## UTOPIAN IDEAS
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+- **Lefebvre** asserted that we need **utopian ideas**; that the i**magination** needs to be deployed to create a built environment not based on current forms or feasibility, but instead, **in the voids** between the current social orders, hierarchies, and systems.
+- **We need utopian ideas for soil! To retain and repair the living diversity below our feet. To treat worms, nematodes, fungi, and protozoa as friends.**
+- Much of this needs to happen in the voids **between buildings** and **roads**, and in **gardens and parks**.
+- This isn't a romanisation. Care work is dirty and hard, but necessary.
+
+
+</div>
+
+
+
+
+
+Notes:
+Geographer Cecilie Sachs Olsen has examined the implications of degrowth and architecture through her experience as a curator of the 2019 Oslo Architecture Triennial. Olsen argues that spatial politics can be activated through dynamic participatory ‘moments of disruption’ where users configure and reconfigure architecture. Drawing on Lefebvre’s ‘experimental utopias’, Olsen does not see ‘spatial utopian politics’ as programming the future, but rather, as an ‘unplanned and processual’ form of spacial agency that explores ‘alternative societal structures and systems’ through a praxis that deploys architectural skills in an ‘open-ended and politically progressive way’. Therefore, according to Olsen, an experimental utopia is a ‘dialectical process in which one steps back from the real to cut a path that leads beyond the actual world already realised and toward a possible world yet to come’. [@sachsolsen2021]
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+Photo: Dylan Newell // **Flemington Food Forest Community Graden** // 2021
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Files/Proposed Axo2.jpg" alt="" style="object-fit: scale-down">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# QUESTIONS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1200,"margin":0,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
 </html>
