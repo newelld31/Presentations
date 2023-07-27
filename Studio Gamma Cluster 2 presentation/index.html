@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/layout.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Pasted image 20230713134836.png" alt="" style="width: 2400px; object-fit: fill">
+
+<div class="has-light-background" style="background-color: white; padding: 50px; box-sizing: border-box; opacity: 0.3; position: absolute; left: 5%; top: 24%; height: 25%; width: 85%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+</div>
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+## HOUSING FOR MORE THAN HUMANS
+
+</div>
+
+ 
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+
+Our cluster invites you to speculate on new ways of cohabiting urban space with more-than-human companions. With a strong focus on ecology, you will be investigating how we can produce spaces that are more inclusive to more-than-human friends. Can urban landscapes and architecture be less human centric and serve a multitude of species? Does an insect, bird, or bat need an architect? What would their brief be? From a list, you will be choosing one focus animal to serve as a client alongside humans, and working towards a design that balances the ecological needs of them both.
+
+
+
+
+
+Notes:
+
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+nhelll
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Teaching/Files/Casa de gatos WOWOWA.png" alt="" style="width: 2400px; object-fit: fill">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# POSSIBLE CLIENTS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- White-plumed honeyeater or Eastern spinebill
+- Blue-banded bee or native insects
+- Micro bats of Melbourne
+- Ringtail possum (but not the brushtail possum)
+- Frogs of Melbourne
+- 
+
+
+
+
+Notes:
+
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Alusta Pavilion, Suomi Koivisto Architects, 2022, Helsinki // Source: https://www.re-thinkingthefuture.com/institutional/7929-alusta-pavilion-by-suomikoivisto-architects/**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#7f8256" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<img src="Pasted image 20230713140003.png" alt="" style="width: 2400px; object-fit: fill">
+
+</div>
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 5%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+# POSSIBLE CLIENTS
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 8%; top: 25%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+
+
+
+
+- White-plumed honeyeater or Eastern spinebill
+- Blue-banded bee or native insects
+- Micro bats of Melbourne
+- Ringtail possum (but not the brushtail possum)
+- Frogs of Melbourne
+- 
+
+
+
+
+Notes:
+
+
+
+</div>
+
+<div class="has-dark-background" style="background-color: #505050; padding: .5px 900px; box-sizing: border-box; position: absolute; left: 5%; top: 88%; height: 0%; width: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="centre">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 89%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+<div class="block">
+
+**Alusta Pavilion, Suomi Koivisto Architects, 2022, Helsinki // Source: https://www.re-thinkingthefuture.com/institutional/7929-alusta-pavilion-by-suomikoivisto-architects/**
+</div>
+
+ <!-- .element: style="align: left; font-size: 18px" -->
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<div class="block">
+
+DYLAN NEWELL / SOIL, WORMS, GARDENS & THE SUBURBS / 08.06.2023
+</div>
+
+ <!-- .element: style="font-size: 18px; color: #505050" -->
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1200,"margin":0,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
